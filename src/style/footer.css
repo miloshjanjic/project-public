@@ -1,0 +1,30 @@
+.footer{
+  bottom: 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(72, 69, 69);
+  color: white;
+  height: 120px;
+}
+.footer-second ul{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.footer-second ul li:hover{
+  cursor: pointer;
+}
+
+.footer-second li{
+  list-style: none;
+}
+
+.footer-second li a{
+  text-decoration: none;
+  color: white;
+  padding: 3px;
+  display: block;
+}

@@ -1,0 +1,82 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  background-color: rgb(228, 230, 230);
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  height: 60px;
+}
+
+.navbar-links ul{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar-links li{
+  list-style: none;
+  
+}
+.navbar-links li a{
+  text-decoration: none;
+  color: grey;
+  padding: 3px;
+  display: ;
+}
+
+.navbar-links ul li:hover{
+  cursor: pointer;
+}
+
+.logo_color{
+  width: 120px;
+  height: 80px;
+}
+
+.btn-logIn{
+  width: 80px;
+  height: 25px;
+  border: 1px solid gray;
+  background-color: rgb(228, 230, 230);
+  color: grey;
+}
+
+.btn-createAcc{
+  width: 140px;
+  height: 25px;
+  border: 1px solid gray;
+  background-color: green;
+  color: white;
+}
+
+.btn-logIn:hover{
+  cursor: pointer;
+
+}
+
+.btn-createAcc:hover{
+  cursor: pointer;
+}
+
+@media (max-width:400px) {
+  .navbar{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar ul{
+    flex-direction: column;
+  }
+
+}
