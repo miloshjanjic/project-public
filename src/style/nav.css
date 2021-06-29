@@ -26,15 +26,24 @@ body{
 
 .navbar-links li{
   list-style: none;
+  padding: 10px;
   
 }
 .navbar-links li a{
   text-decoration: none;
   color: grey;
   padding: 3px;
-  display: ;
+  
 }
 
+.navbar-links a:after{
+  padding-left: 10px;  
+  content: "•";
+  color: orange;
+  position: absolute;
+  float: left;
+  
+}
 .navbar-links ul li:hover{
   cursor: pointer;
 }
@@ -46,7 +55,7 @@ body{
 
 .btn-logIn{
   width: 80px;
-  height: 25px;
+  height: 30px;
   border: 1px solid gray;
   background-color: rgb(228, 230, 230);
   color: grey;
@@ -54,7 +63,7 @@ body{
 
 .btn-createAcc{
   width: 140px;
-  height: 25px;
+  height: 30px;
   border: 1px solid gray;
   background-color: green;
   color: white;

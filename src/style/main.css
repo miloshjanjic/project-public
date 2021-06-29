@@ -1,5 +1,23 @@
 body{
   background-color: rgb(228, 230, 230);
+  
+}
+
+.mainOne{
+  display: flex;
+  /* flex-wrap: wrap;  */
+  justify-content: space-between;
+  align-items: center;
+  /* flex-direction: row; */
+  flex-flow: row;
 
 }
 
+.mainTwo{
+  display: flex;
+  /* flex-wrap: wrap; */
+  /* flex-direction: row; */
+  flex-flow: row;
+  justify-content: space-between;
+  /* position: relative; */
+}

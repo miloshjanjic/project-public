@@ -1,8 +1,6 @@
-import React from 'react';
-import { useState } from 'react';
+import React,{useState,useEffect} from 'react';
 
 import './style/profile.css';
-
 
 const Profile = () => {
   const [firstName, setFirstname] = useState('');
@@ -12,34 +10,27 @@ const Profile = () => {
   const [password, setPassword] = useState('');
   const [repeat, setReapet] = useState('');
 
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    const blog = { firstName, lastName, email, birthday, password, repeat }
 
-    fetch('', {
-      method: 'POST',
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(blog)
-    }).then(() => {
-      console.log('Profile added');
-    })
   };
-
+  
   return (
     <div className="profile">
       <h1>My Profile</h1>
       <div className="profile-main" >
         <div className="avatar-div" >
           <input 
-            type="image"
-
-            
+            name="Image"
+            type="file"
+            // onChange={}
           />
-          <br/> <br/>
+          <br/>
           <input 
             type="button"
             value="CHANGE AVATAR"
-          />
+            /><br /><br />
         </div>
 
         <div className="profile=div" >
@@ -50,42 +41,42 @@ const Profile = () => {
               type="text"
               value={firstName}
               onChange={(e) => setFirstname(e.target.value)}
-            />
+              /><br />
             <label >Last Name</label>
             <input
               required
               type="text"
               value={lastName}
               onChange={(e) => setLastname(e.target.value)}
-            /> <br /> <br />
+              /> <br />
             <label >Email</label>
             <input
               required
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-            />
+              /><br />
             <label >Birthday</label>
             <input
               required
               type="date"
               value={birthday}
               onChange={(e) => setBirthday(e.target.value)}
-            /> <br /> <br />
+              /> <br /> 
             <label >Password</label>
             <input
               required
               type="text"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-            />
+              /><br />
             <label >Repeat Password</label>
             <input
               required
               type="text"
               value={repeat}
               onChange={(e) => setReapet(e.target.value)}
-            /> <br /> <br />
+              /> <br /> <br />
             <input type="submit" value="SAVE" />
           </form>
         </div>
@@ -95,3 +86,14 @@ const Profile = () => {
 };
 
 export default Profile;
+
+// const url = `http://localhost:9000/api/profile/`;
+// const blog = { firstName, lastName, email, birthday, password }
+
+// fetch(url, {
+//   method: 'POST',
+//   headers: { "Content-Type": "application/json" },
+//   body: JSON.stringify(blog)
+// }).then(() => {
+//   console.log('Profile added');
+// })

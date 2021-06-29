@@ -1,6 +1,4 @@
-// import { set } from 'mongoose';
-import React from 'react';
-import { useState } from 'react';
+import React,{useState} from 'react';
 import { Link } from 'react-router-dom';
 
 import './style/register.css';
@@ -13,19 +11,13 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [repeat, setReapet] = useState('');
 
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     const blog = { firstName, lastName, email, birthday, password, repeat }
-
-    fetch('', {
-      method: 'POST',
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(blog)
-    }).then(() => {
-      console.log('Accont added');
-    })
+    
   };
-
+  
   return (
     <div className="Account">
       <h2>Create Account</h2>
@@ -45,7 +37,7 @@ const Register = () => {
               type="text"
               value={firstName}
               onChange={(e) => setFirstname(e.target.value)}
-            />
+              />
             <label >Last Name</label>
             <input
               required
@@ -59,21 +51,21 @@ const Register = () => {
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-            />
+              />
             <label >Birthday</label>
             <input
               required
               type="date"
               value={birthday}
               onChange={(e) => setBirthday(e.target.value)}
-            /> <br /> <br />
+              /> <br /> <br />
             <label >Password</label>
             <input
               required
               type="text"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-            />
+              />
             <label >Repeat Password</label>
             <input
               required
@@ -93,3 +85,13 @@ const Register = () => {
 };
 
 export default Register;
+
+// const REACT_API = 'localhost:9000/api';
+// const url = `http://localhost:9000/api/auth/register`;
+// fetch(url, {
+//   method: 'POST',
+//   headers: { "Content-Type": "application/json" },
+//   body: JSON.stringify(blog)
+// }).then(() => {
+//   console.log('Accont added');
+// })

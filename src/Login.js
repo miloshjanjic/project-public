@@ -1,6 +1,5 @@
-import React from 'react';
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React,{ useState } from 'react';
+import { BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
 
 import './style/login.css';
 
@@ -8,17 +7,11 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     const blog = { email, password }
-
-    fetch('', {
-      method: 'POST',
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(blog)
-    }).then(() => {
-      console.log('Loged In');
-    })
+    
   };
   return (
     <div className="login" >
@@ -47,7 +40,7 @@ const Login = () => {
               type="text"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-            /> <br /><br />
+              /> <br /><br />
             <Link to={"/profile"} >
               <input type="submit" value="LOG IN" />
             </Link>
@@ -55,11 +48,18 @@ const Login = () => {
           </form>
 
         </div>
-
       </div>
-
     </div>
   )
 };
 
 export default Login;
+
+// const url = `http://localhost:9000/api/auth/login`;
+// fetch(url, {
+//   method: 'POST',
+//   headers: { "Content-Type": "application/json" },
+//   body: JSON.stringify(blog)
+// }).then(() => {
+//   console.log('Loged In');
+// })

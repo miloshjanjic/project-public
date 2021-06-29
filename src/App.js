@@ -7,6 +7,7 @@ import Footer from './Footer';
 import Register from './Register';
 import RecipesList from './RecipesList';
 import RecipesProfile from './RecipesProfile';
+import RecipeDetail from './RecipeDetail';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -25,13 +26,14 @@ function App() {
 
             <Route path="/profile" exact component={Profile} />
             
-
             <Route path="/register" exact component={Register} />
               
-            <Route path="/recipes-list" component={RecipesList} />
+            <Route path="/recipe-list" exact component={RecipesList} />
             
-            <Route path="/recipes-profile" exact component={RecipesProfile} />
-             
+            <Route path="/recipe-profile" exact component={RecipesProfile} />
+
+            <Route path="/recipe-detail" exact component={RecipeDetail} />
+
           </Switch>
 
           <Footer />

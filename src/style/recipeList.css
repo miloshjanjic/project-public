@@ -2,3 +2,9 @@ body{
   background-color: rgb(228, 230, 230);
 
 }
+
+.icon_plus{
+  width: 30px;
+  height: 30px;
+  margin-left: 450px;
+}

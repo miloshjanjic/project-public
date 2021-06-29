@@ -5,6 +5,14 @@ import './style/nav.css';
 import logo from './assets/images/logo_color.svg';
 
 const Navbar = () => {
+  // const user = null;
+
+  // const isLogin = false;
+  // {isLogin ? 'Register' 'Login'}
+  // {isLogin && (
+  <>    </>
+  // )
+
   return (
 
     <nav className="navbar">
@@ -21,7 +29,7 @@ const Navbar = () => {
         </ul>
       </div>
 
-
+      {/* {user ? () : () } */}
       <Link to={"/login"}>
         <button className="btn-logIn">
           LOG IN
@@ -33,6 +41,24 @@ const Navbar = () => {
       <Link to={"/register"}>
         <button className="btn-createAcc">
           CREATE ACCOUNT
+        </button>
+      </Link>
+
+      <Link to={"/recipe-list"}>
+        <button className="btn-logIn">
+          MY RECIPES
+        </button>
+      </Link>
+
+      <Link to={"/profile"}>
+        <button className="btn-logIn">
+          MY PROFILE
+        </button>
+      </Link>
+
+      <Link to={"/"}>
+        <button className="btn-logIn">
+          LOG OUT
         </button>
       </Link>
 

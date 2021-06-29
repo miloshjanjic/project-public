@@ -1,25 +1,64 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import logo from './assets/images/icon_plus_white.svg';
+import logoPlus from './assets/images/icon_plus_white.svg';
+import logoDelete from './assets/images/icon_trashcan.svg';
 import './style/recipeList.css';
+
+import { getRecipes, deleteRecipe } from './actions/index';
 
 
 const RecipesList = () => {
+  // const [currentId, setCurrentId] = useState(0);
+  const dispatch = useDispatch();
 
-  // (task,)-gore kako props
-  //! Delete recipe
-  // const deleteRecipe = (id) => {
-  //   setRecipe(recipe.filter((task) => task.id !== id))  
-  // };
+  const recipes = useSelector(state => state.posts); // recipe-reducer
+
+  useEffect(() => {
+    dispatch(getRecipes());
+    dispatch(deleteRecipe());
+  }, [dispatch]);
 
   return (
     <div className="recipes-list">
 
-      <h2>My Recipes</h2>
-      <img src={logo} alt="icon_plus" className="icon_plus" />
+      <span className="my-recipes">My Recipes</span>
+
+      <Link to={"/recipe-profile"}>
+        <img src={logoPlus} alt="icon_plus" className="icon_plus" />
+      </Link>
+      <span>ADD RECIPE</span>
 
       <div className="recipes-table" >
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Recipe Name</th>
+              <th>Category</th>
+              <th>Created On</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {!recipes.length ? <span>No recipes here !!</span> :
+              recipes.map(recipe => {
+                return (
+                  <tr key={recipe._id}>
+                    <td>{recipe.recipeTitle}</td>
+                    <td>{recipe.category}</td>
+                    <td>{recipe.createdAt}</td>
+                    <td>
+                      <img src={logoDelete} alt="icon_delete" className="icon_delete"
+                        onClick={() => dispatch(deleteRecipe(recipe._id))}
+                      />
+                    </td>
+                  </tr>
+                )
+              })
+            }</tbody>
 
+        </table>
       </div>
 
     </div>

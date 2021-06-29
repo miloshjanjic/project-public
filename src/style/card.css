@@ -1,0 +1,29 @@
+.card{
+  width: 200px;
+  height: 280px;
+  border: 1px solid rgb(82, 80, 80);
+  margin: 20px;
+  display: inline-block;
+}
+
+.card-body > img{
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.img-card{
+  width: 100%;
+}
+
+.img-time .img-plate .img-star{
+  width: 15px;
+  height: 15px;
+  margin: 10px;
+
+}
+
+.img-arrow{
+  width: 25px;
+  height: 25px;
+  margin: 10px;
+}
